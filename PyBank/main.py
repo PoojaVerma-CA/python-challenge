@@ -54,15 +54,25 @@ MinValue = min(Decrease.values())
 Minkey = min(Decrease, key=Decrease.get)
 
 
-# print the analysis
-print("Financial Analysis")
-print("------------------------------")
-print(f"Total Months: {Rowcount}")
-print(f"Total: {Total}")
-print(f"Average  Change: {round(AvgChange,2)}")
-print(f"Greatest Increase in Profits: {Maxkey} (${MaxValue})")
-print(f"Greatest Decrease in Profits: {Minkey} (${MinValue})")
+# create a list print the analysis
+lines = []
+lines.append("Financial Analysis")
+lines.append("------------------------------")
+lines.append(f"Total Months: {Rowcount}")
+lines.append(f"Total: {Total}")
+lines.append(f"Average  Change: {round(AvgChange,2)}")
+lines.append(f"Greatest Increase in Profits: {Maxkey} (${MaxValue})")
+lines.append(f"Greatest Decrease in Profits: {Minkey} (${MinValue})")
 
+#print to terminal
+print('\n'.join(lines))
+
+
+# open the analysis text file and write analysis to file
+AnalysisTxt = os.path.join("analysis", "Analysis.txt") 
+with open(AnalysisTxt,"w") as f:
+    f.write('\n'.join(lines))
+f.close
 
 
 
