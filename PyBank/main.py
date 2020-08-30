@@ -2,7 +2,7 @@
 import os
 import csv
 
-#Initialize variables and dictionaries
+#Initialize dictionaries to store month and corresponsing Increase or Decrease respectively
 Increase = {}
 Decrease = {}
 SumChange = 0
