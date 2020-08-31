@@ -5,8 +5,6 @@ import csv
 #Initialize dictionary to store candidates and corresponding votes
 candidates = {}
 
-#Initialize variables and dictionaries
-
 # Path to collect data from the Resources folder
 budget_csv = os.path.join("Resources", "election_data.csv")
 

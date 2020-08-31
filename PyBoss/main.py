@@ -1,6 +1,7 @@
 # Import the os module to create file paths and csv module for reading CSV files
 import os
 import csv
+import datetime
 
 #Initialize variables and dictionaries
 lines = []
@@ -59,7 +60,7 @@ us_state_abbrev = {
 
 # Path for read and write files
 Emp_csv = os.path.join("Resources", "employee_data.csv")
-Output_path = os.path.join("Resources", "Output_emp_data.csv")
+Output_path = os.path.join("Analysis", "Output_emp_data.csv")
 
 #open write file
 with open(Output_path, 'w', newline='') as output_file:
@@ -79,7 +80,8 @@ with open(Output_path, 'w', newline='') as output_file:
             lines.append(row[1].split(" ")[0])
             lines.append(row[1].split(" ")[1])
              #need to reformat date
-            lines.append(row[2])
+            d = datetime.datetime.strptime(row[2], '%m/%d/%Y')
+            lines.append(d.strftime('%m/%d/%Y'))
             #format SSN
             lines.append(f'***-**-{row[3].split("-")[2]}')
             #use state abbreviation dictionary to format state to abbreviation
