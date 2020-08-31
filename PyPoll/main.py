@@ -26,7 +26,7 @@ with open(budget_csv) as csv_file:
 #count total votes
 TotalVotes = sum(candidates.values())
 
-#create list to print analysis 
+#start the list to print analysis 
 lines = [] 
 lines.append("Election Results")
 lines.append("------------------------------")

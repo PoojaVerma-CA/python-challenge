@@ -21,7 +21,7 @@ def paragraph(InputFilePath,OutputFilePath):
         LetterSum = len(word) + LetterSum
     AvgLetterCount = LetterSum/len(words)
 
-    # count words in each sentence
+    # count words in each sentence  
     wordsinS = 0
     for sentence in sentences:
         wordsperS = sentence.split(" ")
