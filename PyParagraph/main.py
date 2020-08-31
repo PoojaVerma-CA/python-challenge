@@ -2,6 +2,7 @@
 import os
 
  #-----------Function Definition for paragraph analysis---------------
+ #------Parameters - Input file path to read and output file path to write analysis
 def paragraph(InputFilePath,OutputFilePath):
     with open(InputFilePath,"r") as p:
         for lines in p:
@@ -29,7 +30,7 @@ def paragraph(InputFilePath,OutputFilePath):
     # calculate sentence length
     AvgSentenceL = wordsinS/len(sentences)
 
-
+    #prepare list for printing 
     lines = []
     lines.append("Paragraph Analysis")
     lines.append("----------------------------")
@@ -47,9 +48,10 @@ def paragraph(InputFilePath,OutputFilePath):
 
 #--------------------END Function------------------------------------
 
-# Define file paths
+# Define file paths for Raw Data 
 Paragraph1 = os.path.join("Resources", "paragraph_1.txt") 
 Paragraph2 = os.path.join("Resources", "paragraph_2.txt") 
+# Define file path for Analysis files
 OutputFile1 = os.path.join("analysis", "Analysis for Paragraph_1.txt") 
 OutputFile2 = os.path.join("analysis", "Analysis for Paragraph_2.txt") 
 
